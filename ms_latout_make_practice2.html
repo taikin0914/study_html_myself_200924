@@ -1,0 +1,89 @@
+<!-- 능동적인 layout을 만들기 위해 layout class를
+만들어서 header, nav, section, article, aside, footer를
+다 때려박아서 margin:0 auto로 속성을 정의하였다.
+능동적인 layout을 만드는데 있어서 이게 가장 쉬운 방법이다.
+이번에는 다른 방법을 써서 만들어 보겠다.-->
+<!DOCTYPE htnl>
+<html>
+    <head>
+        <title></title>
+        <style>
+            body{
+                margin:0;
+                padding:0;
+            }
+            #header{
+                height:100px;
+                background:#eee;
+                width:1000px;
+                /* margin을 써서 양옆을 auto로 지정
+                그러면 능동적인 layout을 적용 가능 */
+                margin:0 auto 10px auto;
+            }
+            #nav{
+                height:100px;
+                background:#eee;
+                width:1000px;
+                margin:0 auto 10px auto;
+            }
+            .section_main{
+                height:600px;
+                float:left;
+                width:700px;
+            }
+            .section{
+                background:#f0f;
+                height:290px;
+                margin: 0 0 10px 0;
+            }
+            .article{
+                background:#f00;
+                height:290px;
+                margin: 0 0 10px 0;
+            }
+            .aside{
+                background:yellowgreen;
+                float: left;
+                height:600px;
+                width:290px;
+                margin: 0 0 0 10px;
+            }
+            #footer{
+                background:#eee;
+                width:1000px;
+                height:100px;
+                margin: 0 auto 10px auto;
+            }
+            .contend{
+                background:yellow;
+                height:600px;
+                width:1000px;
+                margin: 20px auto 20px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            header
+        </div>
+        <div id="nav">
+            nav
+        </div>
+        <div class="contend">
+            <div class="section_main">
+                <div class="section">
+                    section
+                </div>
+                <div class="article">
+                    article
+                </div>
+            </div>
+            <div class="aside">
+                aside
+            </div>
+        </div>
+        <div id="footer">
+            footer
+        </div>
+    </body>
+</html>

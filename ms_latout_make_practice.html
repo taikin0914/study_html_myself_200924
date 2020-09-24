@@ -1,0 +1,112 @@
+<!-- After studying 1_~3_layout_make2,
+I made the code by myself again. -->
+<!DOCTYPE html>
+<!-- html에는 head와 body가 있음 -->
+<html>
+    <head>
+        <title></title>
+        <!-- layout을 만들기 위해 h1, dt 같은 요소들을
+        style태그를 이용해 초기화하겠씀. -->
+        <style>
+            /* 이 요소를 초기화하는 이유는 layout을 구성할 때
+            충돌을 피하기 위한 것 */
+            body{
+                /* maegin: 바같쪽 여백을 0 */
+                margin:0;
+                /* padding: 안쪽 여백을 0 */
+                padding:0;
+            }
+            /* header을 정의 */
+            #header{
+                height:100px;
+                background: #eee;
+            }
+            /* navigation을 정의 */
+            #nav{
+                height:100px;
+                background: #eee;
+            }
+            /* section_main과 aside를 배치할때 footer과
+            재자리를 못잡고 올라오는 것을 고치기 위해
+            contend class를 만들어 section_main과 aisde를
+            때려 박아서 정의 하겠음. */
+            .contend{
+                width:1000px;
+                height:600px;
+            }
+            /* section_main을 정의 class를 정의할 때는
+            .을 사용 */
+            .section_main{
+                /* 너비를 따로 지정안해주니 귀엽게 표시됨
+                내가 원하는대로 표시하기 위해 너비를 지정함 */
+                /* layout의 너비가 1000px이기 때문에
+                section_main을 700px을 주고 너머지 300px는
+                aside에게 주겠음. */
+                width:700px;
+                background:#ff0;
+                /* 왼쪽부터 먼저 채우기 위해 float를 사용 */
+                float: left;
+            }
+            #section{
+                height:300px;
+                background:#f00;
+            }
+            #article{
+                height:300px;
+                background:#f0f;
+            }
+            .aside{
+                /* layout - section_main = aside=300px */
+                width:300px;
+                height:600px;
+                background:green;
+                float: left;
+            }
+            #footer{
+                height:100px;
+                background:#eee;
+            }
+            /* 능동적으로 움직이는 layout을 만들고 싶음 */
+            /* 1000px로 지정하고 1000px가 넘을 시 가운데 정렬 */
+            .layout{
+                margin:0 auto;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <!-- 능동형 layout을 만들기 위해 layout class를
+        만들어 header, navigation, section main, aside,
+        footer을 때려박음. -->
+        <div class="layout">
+            <!-- layout은 header, nav, section, article, 
+            aside, footer로 구성되어 있음. -->
+            <!-- id, class는 속성을 부여할때 필요함 -->
+            <div id="header">
+                header
+            </div>
+            <div id="nav">
+                navigation
+            </div>
+            <!-- layout 기본구성요소를 보면
+            section 밑에 article이 있기에
+            section_main이라는 class를 만들었음 -->
+            <div class="contend">
+                <div class="section_main">
+                    <div id="section">
+                        section
+                    </div>
+                    <div id="article">
+                        article
+                    </div>
+                </div>
+                <div class="aside">
+                    aside
+                </div>
+            </div>
+            <div id="footer">
+                footer
+            </div>
+        </div>            
+    </body>
+</html>
